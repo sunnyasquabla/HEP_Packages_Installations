@@ -37,7 +37,9 @@ launch
 
 We can use launch with path.
 
----------------------------add process p p > t t~, (t > w+ b, w+ > l+ vl), (t~ > w- b~, w- > l- vl~) QCD=2
+---------------------------
+
+add process p p > t t~, (t > w+ b, w+ > l+ vl), (t~ > w- b~, w- > l- vl~) QCD=2
 
 set nevents = 1000
 set ebeam1 = 1000
