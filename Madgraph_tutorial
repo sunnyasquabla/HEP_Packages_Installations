@@ -1,0 +1,118 @@
+Madgraph = MG or mg
+
+To install Madgraph, download the tar file from the official site.
+Save the file in your working directory.
+Go to the directory of mg and type ./bin/mg5_aMC
+
+This will launch the Madgraph prompt.
+
+*** You may see and error that current Python version is under experiment. 
+*** You can ignore that or install older version of python in a separate environment and launch the env
+*** before launching mg from terminal.
+
+Now you can install pythia8 using 'install pythia8' command.
+This will also install lhapdf.
+
+Now install delphes or madAnalysis using the install command.
+
+----- BASIC COMMANDS FOR MADGRAPH -------
+
+---------------------------------------
+
+import model modelname
+display modellist
+
+display particles
+display particles t (will give details of tau particle)
+display multiparticles
+display interactions
+
+------------------------------------
+
+generate process p p > t t~
+display diagrams
+output filename (can give path)
+open.index.html
+launch 
+
+We can use launch with path.
+
+---------------------------add process p p > t t~, (t > w+ b, w+ > l+ vl), (t~ > w- b~, w- > l- vl~) QCD=2
+
+set nevents = 1000
+set ebeam1 = 1000
+set ebeam2 = 1000
+set param_card mass 45 1200
+etc
+
+-------------------------------------
+
+Generating using .txt_file
+go to madgraph dir
+
+./bin/mg5_aMC $pathTOfile
+
+------------------------------------
+
+Suppose you want to generate a process and you want to save the process dir in some other locations.
+In the MG .txt file you can specify the path of your choice where you want to save the dir.
+
+I have saved in the Documents directory.
+The .txt file can also be called by specifying the path.
+
+--------------------------------------------------
+
+running a madevent file
+
+go to process dir
+./bin/madevent Path to .txt_file 
+
+Using this we don't have to use MG CLI again. 
+
+------------------------------------------
+
+suppose you have generated a process. It will create a dir in MG.
+you can avoid MG CLI and generate the process again by using the generate_event file.
+we can edit the run/param card for this process and generate from terminal.
+
+go to the process folder.
+
+./bin/generate_madevents runfolder_name #this runfolder can be according to your choice.
+
+----------------------------------------------
+
+editing the vim file
+
+use delete to delete something.
+to type press i and type and esc to stop typing
+use arrow keys to navigate.
+:q! to exit without save
+:wq to save and exit
+Shift + ZZ also works.
+:w save and continuing editing.
+
+-------------------------------------
+
+# automatic_html_opening = False
+
+uncomment this line in input dir in MG and configuration file to stop opeing of htm file automatically.
+
+---------------------------------------
+
+HOW TO RUN A BASH SCRIPT FILE FOR DIFFERENT COM ENERGY.
+
+First we have to wrtite a bash file. How to do it? See next syntax2 file.
+After you write a bash file, you have to give it execute access (chmod +x file.sh).
+Then run the bash file in the terminal by entering the path of bash file.
+
+/home/sunny/Pictures/file.sh
+
+This will execute the command.
+
+-----------------------------
+
+This will generate a .txt file or different COM energies which gave me a .txt file to be used in MG.
+
+You don't need to on the detector and Pythia for cross-section calculations.
+
+Run this .txt file and it will generate the cross sections for different COM. Plot these.
