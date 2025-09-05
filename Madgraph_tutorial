@@ -112,7 +112,27 @@ This will execute the command.
 -----------------------------
 
 This will generate a .txt file or different COM energies which gave me a .txt file to be used in MG.
-
 You don't need to on the detector and Pythia for cross-section calculations.
-
 Run this .txt file and it will generate the cross sections for different COM. Plot these.
+
+------------------------------------------
+
+Debugging
+
+Python 3.12 may not be supported completely with MG.
+The lhapdf installation might get error when you try to use lhapdf.
+
+Make a virtual environment of Python 3.10 version.
+Activate this version while using MG.
+
+Inside this MG CLI, lhapdf can be used.
+Also python may not read the lhapdf and give error.
+
+LHAPDF error resolution.
+
+Type thses below two commands in bashrc file.
+
+export LD_LIBRARY_PATH=/home/sunny/HEP_Packages/MG5_aMC_v3_6_3/HEPTools/lhapdf6_py3/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/home/sunny/HEP_Packages/MG5_aMC_v3_6_3/HEPTools/lhapdf6_py3/lib/python3.10/site-packages:$PYTHONPATH
+
+This will most probably resolve the error.
