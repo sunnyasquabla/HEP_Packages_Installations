@@ -13,9 +13,45 @@ This will launch the Madgraph prompt.
 Now you can install pythia8 using 'install pythia8' command.
 This will also install lhapdf.
 
+---------------- Debugging ------------------------------
+
+Python 3.12 may not be supported completely with MG.
+The lhapdf installation might get error when you try to use lhapdf.
+
+Make a virtual environment of Python 3.10 version.
+Activate this version while using MG.
+
+-----------------Creating a virtual environment --------------------------
+step-1
+
+sudo apt update
+sudo apt install python3.10 python3.10-venv python3.10-dev
+
+step-2 create a virtual environment using 
+
+python3.10 -m venv mg5_env
+
+step 3 activate the environment using the command
+
+source mg5_env/bin/activate
+
+check the python version inside this environment
+
+Inside this MG CLI, lhapdf can be used.
+Also python may not read the lhapdf and give error.
+
+LHAPDF error resolution.
+
+Type thses below two commands in bashrc file.
+
+export LD_LIBRARY_PATH=/home/sunny/HEP_Packages/MG5_aMC_v3_6_3/HEPTools/lhapdf6_py3/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/home/sunny/HEP_Packages/MG5_aMC_v3_6_3/HEPTools/lhapdf6_py3/lib/python3.10/site-packages:$PYTHONPATH
+
+This will most probably resolve the error.
+
 Now install delphes or madAnalysis using the install command.
 
------ BASIC COMMANDS FOR MADGRAPH -------
+---------------- BASIC COMMANDS FOR MADGRAPH ----------------------
 
 ---------------------------------------
 
@@ -119,22 +155,4 @@ Run this .txt file and it will generate the cross sections for different COM. Pl
 
 ------------------------------------------
 
-Debugging
 
-Python 3.12 may not be supported completely with MG.
-The lhapdf installation might get error when you try to use lhapdf.
-
-Make a virtual environment of Python 3.10 version.
-Activate this version while using MG.
-
-Inside this MG CLI, lhapdf can be used.
-Also python may not read the lhapdf and give error.
-
-LHAPDF error resolution.
-
-Type thses below two commands in bashrc file.
-
-export LD_LIBRARY_PATH=/home/sunny/HEP_Packages/MG5_aMC_v3_6_3/HEPTools/lhapdf6_py3/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=/home/sunny/HEP_Packages/MG5_aMC_v3_6_3/HEPTools/lhapdf6_py3/lib/python3.10/site-packages:$PYTHONPATH
-
-This will most probably resolve the error.
