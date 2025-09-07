@@ -2,13 +2,12 @@ Madgraph = MG or mg
 
 To install Madgraph, download the tar file from the official site.
 Save the file in your working directory.
-Go to the directory of mg and type ./bin/mg5_aMC
+Go to the directory of mg from the terminal and type ./bin/mg5_aMC
 
 This will launch the Madgraph prompt.
 
 *** You may see and error that current Python version is under experiment. 
-*** You can ignore that or install older version of python in a separate environment and launch the env
-*** before launching mg from terminal.
+*** You can ignore that or install older version of python (see below) in a separate environment and launch the env before launching mg from terminal.
 
 Now you can install pythia8 using 'install pythia8' command.
 This will also install lhapdf.
@@ -21,7 +20,7 @@ The lhapdf installation might get error when you try to use lhapdf.
 Make a virtual environment of Python 3.10 version.
 Activate this version while using MG.
 
------------------Creating a virtual environment --------------------------
+----------------- Creating a virtual environment --------------------------
 step-1
 
 sudo apt update
@@ -35,12 +34,17 @@ step 3 activate the environment using the command
 
 source mg5_env/bin/activate
 
-check the python version inside this environment
+check the python version inside this environment using python3 --version
 
-Inside this MG CLI, lhapdf can be used.
-Also python may not read the lhapdf and give error.
+launch madgraph same as above.
 
-LHAPDF error resolution.
+install six using 'pip install six' if required
+
+Inside this MG CLI, lhapdf can be used without any error.
+
+There maybe another problem with path that python may not read the lhapdf and give error.
+
+----------------- LHAPDF error resolution -----------------------------------
 
 Type thses below two commands in bashrc file.
 
@@ -53,7 +57,7 @@ Now install delphes or madAnalysis using the install command.
 
 ---------------- BASIC COMMANDS FOR MADGRAPH ----------------------
 
----------------------------------------
+---------------------------------------------------------------------
 
 import model modelname
 display modellist
