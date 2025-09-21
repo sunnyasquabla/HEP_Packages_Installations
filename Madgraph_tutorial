@@ -62,12 +62,14 @@ Now install delphes or madAnalysis using the install command.
 import model modelname
 display modellist
 
+----------------------------------------------------------------
+
 display particles
 display particles t (will give details of tau particle)
 display multiparticles
 display interactions
 
-------------------------------------
+-----------------------------------------------------------
 
 generate process p p > t t~
 display diagrams
@@ -85,6 +87,8 @@ set nevents = 1000
 set ebeam1 = 1000
 set ebeam2 = 1000
 set param_card mass 45 1200
+set pdlabel = lhapdf
+set lhaid = 306000 (for example)
 etc
 
 -------------------------------------
