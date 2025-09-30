@@ -62,6 +62,7 @@ Now install delphes or madAnalysis using the install command.
 import model modelname
 display modellist
 
+import model modelname --modelname (this will keep the particles name default)
 ----------------------------------------------------------------
 
 display particles
@@ -86,7 +87,9 @@ add process p p > t t~, (t > w+ b, w+ > l+ vl), (t~ > w- b~, w- > l- vl~) QCD=2
 set nevents = 1000
 set ebeam1 = 1000
 set ebeam2 = 1000
+set decay pdg_no value, like set decay 45 0.1
 set param_card mass 45 1200
+set decay 45 auto (for automatic calculation of width)
 set pdlabel = lhapdf
 set lhaid = 306000 (for example)
 etc
