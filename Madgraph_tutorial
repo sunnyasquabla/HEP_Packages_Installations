@@ -1,5 +1,7 @@
 Madgraph = MG or mg
 
+To update ---- install update
+
 To install Madgraph, download the tar file from the official site.
 Save the file in your working directory.
 Go to the directory of mg from the terminal and type ./bin/mg5_aMC
