@@ -1,2 +1,12 @@
 How to install root?
 
+git clone https://github.com/root-project/root.git
+cd root
+mkdir build
+cd build
+cmake -S .. -B . -DCMAKE_INSTALL_PREFIX=../install
+cmake --build . -j$(nproc)
+cmake --install .
+echo 'source ~/root/install/bin/thisroot.sh' >> ~/.bashrc
+source ~/.bashrc
+root
